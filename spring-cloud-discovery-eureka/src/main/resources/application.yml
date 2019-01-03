@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost #不加属性启动会报错
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+logging:
+  level: info
+
+info:
+  name: @project.artifactId@
+  encoding: @project.build.sourceEncoding@
+  java:
+    source: @java.version@
+    target: @java.version@

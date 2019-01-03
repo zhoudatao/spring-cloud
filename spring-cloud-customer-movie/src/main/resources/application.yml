@@ -1,0 +1,27 @@
+server:
+  port: 8010
+  context-path: /
+  tomcat:
+    uri-encoding: utf-8
+
+logging:
+  level: info
+
+info:
+  name: @project.artifactId@
+  encoding: @project.build.sourceEncoding@
+  java:
+    source: @java.version@
+    target: @java.version@
+
+spring:
+  application:
+    name: spring-cloud-customer-movie
+  eureka:
+      client:
+        registerWithEureka: false
+        fetchRegistry: false
+        serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+      instance:
+        prefer-ip-address: true #表示将自己的ip注册到Eureka Server,如果不配置该属性或将其设置为false,表示注册微服务所在操作系统的hostname到Eureka Server

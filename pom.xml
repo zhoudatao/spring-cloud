@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itmuch.cloud</groupId>
+    <artifactId>spring-cloud</artifactId>
+    <version>0.0.1-SNAPSHOT	</version>
+	<!--子模块-->
+	<modules>
+		<module>spring-cloud-customer-movie</module>
+		<module>spring-cloud-provider-user</module>
+		<module>spring-cloud-discovery-eureka</module>
+	</modules>
+	<packaging>pom</packaging>
+
+	<!--引入spring boot依赖-->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.3.RELEASE</version>
+	</parent>
+
+	<properties>
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<!--编码格式-->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!--JDK-->
+		<java.version>1.8</java.version>
+	</properties>
+
+	<!--引入spring cloud依赖-->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Brixton.SR1</version>
+				<!--<version>Camden.SR4</version>-->
+				<!--<version>Brixton.RELEASE</version>-->
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
